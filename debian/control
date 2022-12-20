@@ -1,0 +1,96 @@
+Source: haskell-doctest
+Maintainer: Debian Haskell Group <pkg-haskell-maintainers@lists.alioth.debian.org>
+Uploaders: Clint Adams <clint@debian.org>
+Priority: optional
+Section: haskell
+Rules-Requires-Root: no
+Build-Depends: debhelper (>= 10),
+ haskell-devscripts (>= 0.13),
+ cdbs,
+ ghc (>= 8.0.1-17~),
+ ghc-prof,
+ libghc-base-compat-dev (>= 0.7.0),
+ libghc-base-compat-prof,
+ libghc-code-page-dev (>= 0.1),
+ libghc-code-page-prof,
+ libghc-ghc-paths-dev (>= 0.1.0.9),
+ libghc-ghc-paths-prof,
+ libghc-syb-dev (>= 0.3),
+ libghc-syb-prof,
+Build-Depends-Indep: ghc-doc,
+ libghc-base-compat-doc,
+ libghc-code-page-doc,
+ libghc-ghc-paths-doc,
+ libghc-syb-doc,
+Standards-Version: 4.1.4
+Homepage: https://github.com/sol/doctest-haskell
+Vcs-Git: https://salsa.debian.org/haskell-team/DHG_packages.git [p/haskell-doctest]
+Vcs-Browser: https://salsa.debian.org/haskell-team/DHG_packages/tree/master/p/haskell-doctest
+
+Package: libghc-doctest-dev
+Architecture: any
+Depends: ${shlibs:Depends},
+ ${haskell:Depends},
+ ${misc:Depends},
+Recommends: ${haskell:Recommends},
+Suggests: ${haskell:Suggests},
+Provides: ${haskell:Provides},
+Description: test interactive Haskell examples
+ The doctest program checks examples in source code comments.
+ It is modeled after doctest for Python
+ (<http://docs.python.org/library/doctest.html>).
+ .
+ Documentation is at
+ <https://github.com/sol/doctest-haskell#readme>.
+ .
+ This package contains the normal library files.
+
+Package: libghc-doctest-prof
+Architecture: any
+Depends: ${haskell:Depends},
+ ${misc:Depends},
+Recommends: ${haskell:Recommends},
+Suggests: ${haskell:Suggests},
+Provides: ${haskell:Provides},
+Description: test interactive Haskell examples; profiling libraries
+ The doctest program checks examples in source code comments.
+ It is modeled after doctest for Python
+ (<http://docs.python.org/library/doctest.html>).
+ .
+ Documentation is at
+ <https://github.com/sol/doctest-haskell#readme>.
+ .
+ This package contains the libraries compiled with profiling enabled.
+
+Package: libghc-doctest-doc
+Architecture: all
+Section: doc
+Depends: ${haskell:Depends},
+ ${misc:Depends},
+Recommends: ${haskell:Recommends},
+Suggests: ${haskell:Suggests},
+Description: test interactive Haskell examples; documentation
+ The doctest program checks examples in source code comments.
+ It is modeled after doctest for Python
+ (<http://docs.python.org/library/doctest.html>).
+ .
+ Documentation is at
+ <https://github.com/sol/doctest-haskell#readme>.
+ .
+ This package contains the documentation files.
+
+Package: doctest
+Architecture: any
+Section: devel
+Depends: ${shlibs:Depends},
+ ${haskell:Depends},
+ ${misc:Depends},
+Description: test interactive Haskell examples; executable
+ The doctest program checks examples in source code comments.
+ It is modeled after doctest for Python
+ (<http://docs.python.org/library/doctest.html>).
+ .
+ Documentation is at
+ <https://github.com/sol/doctest-haskell#readme>.
+ .
+ This package contains the doctest executable.
